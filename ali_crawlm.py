@@ -61,7 +61,7 @@ def get_data(root_url,pname):
 if __name__ == '__main__':
     start = time.time()
     current_path = os.path.dirname(os.path.abspath(__file__))
-    c_path = current_path + "\showcase.txt"
+    c_path = current_path + "/showcase.txt"
     
     root_url = 'http://www.alibaba.com/products/F0/'
     
