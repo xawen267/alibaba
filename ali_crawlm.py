@@ -92,4 +92,31 @@ if __name__ == '__main__':
            else:
                r_list = r_list + [0]
             
-    print "Elapsed Time: %s" % (time.time() - start)
+    down_path = current_path + "/" +time.strftime("%Y-%m-%d") +"keywordmonitor3.xls"
+
+
+    wb = xlwt.Workbook()
+    ws = wb.add_sheet('A Test Sheet')
+    ws.write(0,0,u'序号')
+    ws.write(0,1,u'产品标题')
+    ws.write(0,2,'K1')
+    ws.write(0,3,'K2')
+    ws.write(0,4,'K3')
+
+    for i in range(len(lists)):
+        ws.write(2*i+1,0,i+1)
+        ws.write(2*i+1,1,lists[i][0])
+    
+        ws.write(2*i+1,2,lists[i][1])
+        ws.write(2*i+2,2,r_list[i*3])
+    
+        ws.write(2*i+1,3,lists[i][2])
+        ws.write(2*i+2,3,r_list[i*3+1])
+    
+        ws.write(2*i+1,4,lists[i][3])
+        ws.write(2*i+2,4,r_list[i*3+2])
+    
+    wb.save(down_path)
+	    
+
+    print "Elapsed Time: %s" % (time.time() - start)    
